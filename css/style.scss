@@ -14,7 +14,6 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
-
 body {
     font-family: "Droid Serif", serif;
 }
@@ -41,11 +40,18 @@ h1, h2, h3 {
     font-size: 32px;
     display: inline-block;
     text-align: center;
+    a {
+        color: #ffffff;
+    }
 }
 .btn-collapsed {
-    background: #2980b9;
+    border: 1.5px solid #28a4c9;
     margin: 18px;
+    span{
+        border: 1px solid #28a4c9;
+    }
 }
+
 .welcome {
     video {
         position: absolute;
@@ -55,45 +61,71 @@ h1, h2, h3 {
         height: 100%;
         object-fit: cover;
         object-position: center;
+        //-ms-transform: translateX(-30%) translateY(0);
+        //-moz-transform: translateX(-30%) translateY(0);
+        //-webkit-transform: translateX(-30%) translateY(0);
+        //transform: translateX(-30%) translateY(0);
     }
 }
 .kramer-header {
+    position: relative;
     height: 100vh;
+    overflow: hidden;
 
     .section-welcome {
         .welcome-text {
-            padding-top: 50px;
-            font-size: 80px;
+            &:first-child{
+                padding-top: 50px;
+            }
+
+            font-size: 8rem;
             font-weight: bold;
             color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 2rem 3rem 0;
+            margin: 0 auto;
             mix-blend-mode: difference;
         }
-        .go-about {
-            position: absolute;
-            bottom: 18%;
-            left: 50%;
-            margin-left: -30px;
-            a {
-                &:hover {
-                    text-decoration: none;
-                }
-            }
-            .btn-go-about {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                font-size: 28px;
-                border-radius: 50%;
-                background: #2ecc71;
-                color: #fff;
-                padding: 15px;
+    }
+    .go-about {
+        padding-top: 15%;
+        position: relative;
+        left: 50%;
+        margin-left: -30px;
+
+        &:before, &:after {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            box-sizing: border-box;
+            width: 100%;
+            height: 1px;
+            background: #fff;
+            border: solid #FFF;
+            border-width: 0 10px;
+        }
+        &:before {
+            margin-left: -100%;
+        }
+        &:after {
+            margin-right: -100%;
+        }
+
+        a {
+            &:hover {
+                text-decoration: none;
             }
         }
+        .btn-go-about {
+            overflow: hidden;
+            font-size: 27px;
+            border-radius: 50%;
+            background: #2ecc71;
+            color: #fff;
+            padding: 12px 15px;
+
+        }
     }
+
 }
 .navbar-brand {
     padding-top: 10px;
@@ -180,7 +212,6 @@ h1, h2, h3 {
             font-size: 20px;
         }
         .circle {
-
             .icon-size {
                 width: 90px;
                 font-size: 70px;
@@ -279,6 +310,7 @@ h1, h2, h3 {
         background: #2ecc71;
         border-radius: 10px;
         margin-top: 46px;
+        color: #ffffff;
     }
     .border-green {
         border-bottom: 1.5px solid #2ecc71;
@@ -322,8 +354,31 @@ h1, h2, h3 {
     }
 }
 
+.portfolio-item {
+    &:hover {
+        overflow: hidden;
+    }
+}
 
-@media screen and (min-width: 0) and (max-width: 768px) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 0) and (max-width: 767px) {
     .welcome {
         video {
             display: none;
@@ -331,10 +386,9 @@ h1, h2, h3 {
         .section-welcome {
             .welcome-text {
                 mix-blend-mode: unset;
-                font-size: 3em;
+                font-size: 2.5em;
             }
         }
-
         background: url("../images/bg.jpg") no-repeat;
         background-size: cover;
         width: 100%;
@@ -345,21 +399,97 @@ h1, h2, h3 {
     }
 }
 
+@media (min-width: 768px) and (max-width: 769px) {
+    .welcome {
+        video {
+            -ms-transform: translateX(-30%) translateY(0);
+            -moz-transform: translateX(-30%) translateY(0);
+            -webkit-transform: translateX(-30%) translateY(0);
+            transform: translateX(-30%) translateY(0);
+        }
+        .go-about {
+            bottom: -20%;
+        }
+    }
+}
 @media (min-width: 0) and (max-width: 576px) {
     .welcome {
         .section-welcome {
             .welcome-text {
-                font-size: 3em;
+                font-size: 2.5em;
             }
         }
-
+    }
+    .kramer-footer {
+        text-align: center;
+        .container {
+            .col-fotter {
+            }
+        }
+    }
+    .btn-cramer-contact {
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .section {
+        padding-bottom: 20px;
+        padding-top: 15px;
+    }
+    .container-fluid-about {
+        font-size: 10px;
     }
 }
-@media (min-width: 577px) and (max-width: 768px) {
+
+@media (min-width: 577px) and (max-width: 767px) {
     .welcome {
         .section-welcome {
             .welcome-text {
                 font-size: 4em;
+            }
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+    .kramer-footer {
+        .container {
+            text-align: center;
+            font-size: 25px;
+            .col-fotter {
+                .text-fotter {
+                    display: inline;
+
+                }
+            }
+        }
+    }
+    .nav-portfolio {
+        font-size: 30px;
+    }
+    #contact {
+        .kramer-row-contact {
+            .col-address {
+                address {
+                    text-align: center;
+                    dd {
+                        font-size: 25px;
+                    }
+                    dt {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+    .btn-cramer-contact {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+    .kramer-form {
+        .border-green {
+            .form-contact {
+                font-size: 20px;
             }
         }
     }

@@ -34,10 +34,14 @@ h1, h2, h3 {
   font-size: 32px;
   display: inline-block;
   text-align: center; }
+  .icon-circle a {
+    color: #ffffff; }
 
 .btn-collapsed {
-  background: #2980b9;
+  border: 1.5px solid #28a4c9;
   margin: 18px; }
+  .btn-collapsed span {
+    border: 1px solid #28a4c9; }
 
 .welcome video {
   position: absolute;
@@ -49,33 +53,46 @@ h1, h2, h3 {
   object-position: center; }
 
 .kramer-header {
-  height: 100vh; }
+  position: relative;
+  height: 100vh;
+  overflow: hidden; }
   .kramer-header .section-welcome .welcome-text {
-    padding-top: 50px;
-    font-size: 80px;
+    font-size: 8rem;
     font-weight: bold;
     color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2rem 3rem 0;
+    margin: 0 auto;
     mix-blend-mode: difference; }
-  .kramer-header .section-welcome .go-about {
-    position: absolute;
-    bottom: 18%;
+    .kramer-header .section-welcome .welcome-text:first-child {
+      padding-top: 50px; }
+  .kramer-header .go-about {
+    padding-top: 15%;
+    position: relative;
     left: 50%;
     margin-left: -30px; }
-    .kramer-header .section-welcome .go-about a:hover {
+    .kramer-header .go-about:before, .kramer-header .go-about:after {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
+      box-sizing: border-box;
+      width: 100%;
+      height: 1px;
+      background: #fff;
+      border: solid #FFF;
+      border-width: 0 10px; }
+    .kramer-header .go-about:before {
+      margin-left: -100%; }
+    .kramer-header .go-about:after {
+      margin-right: -100%; }
+    .kramer-header .go-about a:hover {
       text-decoration: none; }
-    .kramer-header .section-welcome .go-about .btn-go-about {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      font-size: 28px;
+    .kramer-header .go-about .btn-go-about {
+      overflow: hidden;
+      font-size: 27px;
       border-radius: 50%;
       background: #2ecc71;
       color: #fff;
-      padding: 15px; }
+      padding: 12px 15px; }
 
 .navbar-brand {
   padding-top: 10px;
@@ -198,7 +215,8 @@ h1, h2, h3 {
 .kramer-form .btn-cramer-contact {
   background: #2ecc71;
   border-radius: 10px;
-  margin-top: 46px; }
+  margin-top: 46px;
+  color: #ffffff; }
 .kramer-form .border-green {
   border-bottom: 1.5px solid #2ecc71; }
 .kramer-form .form-group label .form-control {
@@ -227,7 +245,10 @@ h1, h2, h3 {
     .kramer-footer .container .col-fotter .text-fotter {
       display: block; }
 
-@media screen and (min-width: 0) and (max-width: 768px) {
+.portfolio-item:hover {
+  overflow: hidden; }
+
+@media screen and (min-width: 0) and (max-width: 767px) {
   .welcome {
     background: url("../images/bg.jpg") no-repeat;
     background-size: cover;
@@ -236,15 +257,62 @@ h1, h2, h3 {
       display: none; }
     .welcome .section-welcome .welcome-text {
       mix-blend-mode: unset;
-      font-size: 3em; }
+      font-size: 2.5em; }
 
   .nav-portfolio {
     flex-direction: column; } }
+@media (min-width: 768px) and (max-width: 769px) {
+  .welcome video {
+    -ms-transform: translateX(-30%) translateY(0);
+    -moz-transform: translateX(-30%) translateY(0);
+    -webkit-transform: translateX(-30%) translateY(0);
+    transform: translateX(-30%) translateY(0); }
+  .welcome .go-about {
+    bottom: -20%; } }
 @media (min-width: 0) and (max-width: 576px) {
   .welcome .section-welcome .welcome-text {
-    font-size: 3em; } }
-@media (min-width: 577px) and (max-width: 768px) {
+    font-size: 2.5em; }
+
+  .kramer-footer {
+    text-align: center; }
+
+  .btn-cramer-contact {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 15px; }
+
+  .section {
+    padding-bottom: 20px;
+    padding-top: 15px; }
+
+  .container-fluid-about {
+    font-size: 10px; } }
+@media (min-width: 577px) and (max-width: 767px) {
   .welcome .section-welcome .welcome-text {
     font-size: 4em; } }
+@media (min-width: 768px) and (max-width: 1200px) {
+  .kramer-footer .container {
+    text-align: center;
+    font-size: 25px; }
+    .kramer-footer .container .col-fotter .text-fotter {
+      display: inline; }
+
+  .nav-portfolio {
+    font-size: 30px; }
+
+  #contact .kramer-row-contact .col-address address {
+    text-align: center; }
+    #contact .kramer-row-contact .col-address address dd {
+      font-size: 25px; }
+    #contact .kramer-row-contact .col-address address dt {
+      font-size: 25px; }
+
+  .btn-cramer-contact {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 15px; }
+
+  .kramer-form .border-green .form-contact {
+    font-size: 20px; } }
 
 /*# sourceMappingURL=style.css.map */
